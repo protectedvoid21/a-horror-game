@@ -13,8 +13,8 @@ public class InteractionMove : MonoBehaviour, IInteractable {
     private bool isOpen;
 
     private void Start() {
-        startPosition = transform.position;
-        openedPosition = transform.position + movePosition;
+        startPosition = transform.localPosition;
+        openedPosition = transform.localPosition + movePosition;
     }
 
     public void Interact() {
@@ -28,8 +28,8 @@ public class InteractionMove : MonoBehaviour, IInteractable {
     }
 
     private IEnumerator ChangePosition(Vector3 desiredPosition) {
-        while(transform.position != desiredPosition) {
-            transform.position = Vector3.Lerp(transform.position, desiredPosition, Time.deltaTime * 3f);
+        while(transform.localPosition != desiredPosition) {
+            transform.localPosition = Vector3.Lerp(transform.localPosition, desiredPosition, Time.deltaTime * 3f);
             yield return null;
         }
     }

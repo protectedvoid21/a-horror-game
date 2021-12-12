@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f161dba484ee3e40851f64864e3c6a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movePosition: {x: 0, y: 0, z: -1.5}
+  movePosition: {x: -1.5, y: 0, z: 0}
 --- !u!1 &1895796254692012524
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,7 +407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f161dba484ee3e40851f64864e3c6a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movePosition: {x: 0, y: 0, z: -1.5}
+  movePosition: {x: -1.5, y: 0, z: 0}
 --- !u!1 &7951143561225079981
 GameObject:
   m_ObjectHideFlags: 0
