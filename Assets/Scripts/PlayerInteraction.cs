@@ -7,6 +7,7 @@ public class PlayerInteraction : MonoBehaviour {
     private OutlineObject hoveredObject;
     
     [SerializeField] private Camera playerCamera;
+    [SerializeField] private LayerMask layerMask;
 
     private void Awake() {
         Cursor.lockState = CursorLockMode.Locked;
@@ -15,34 +16,42 @@ public class PlayerInteraction : MonoBehaviour {
     private void Update() {
         Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
 
-        if(Physics.Raycast(ray, out RaycastHit hit, interactionRange)) {
+        if(Physics.Raycast(ray, out RaycastHit hit, interactionRange, layerMask)) {
             OutlineObject outlineHit = hit.collider.GetComponent<OutlineObject>();
 
             if(outlineHit != null) {
                 outlineHit.EnableOutline();
+                if(hoveredObject != null) {
+                    if(outlineHit.gameObject != hoveredObject.gameObject) {
+                        hoveredObject.DisableOutline();
+                    }
+                }
+                
                 hoveredObject = outlineHit;
                 DoInteraction(hit.collider.gameObject);
             }
-            else if(hoveredObject != null) {
-                hoveredObject.DisableOutline();
-                hoveredObject = null;
+            else {
+                if(hoveredObject != null) {
+                    hoveredObject.DisableOutline();
+                    hoveredObject = null;
+                }
             }
         }
         else {
             if(hoveredObject != null) {
                 hoveredObject.DisableOutline();
+                hoveredObject = null;
             }
         }
     }
 
     private void DoInteraction(GameObject interactionObject) {
-        if(!Input.GetKeyDown(InteractionKey)) {
+        IInteractable interactableObject = interactionObject.GetComponent<IInteractable>();
+        if(interactableObject == null) {
             return;
         }
 
-        IInteractable interactableObject = interactionObject.GetComponent<IInteractable>();
-
-        if(interactableObject != null) {
+        if(Input.GetKeyDown(InteractionKey)) {
             interactableObject.Interact();
         }
     }
