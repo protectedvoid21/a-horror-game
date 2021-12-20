@@ -8,7 +8,7 @@ public class PlayerTaskManager : MonoBehaviour {
 
     [SerializeField] private int requiredTasksToStart = 3;
 
-    private List<TaskObject> tasks;
+    private List<TaskObject> tasks = new List<TaskObject>();
 
     private void Start() {
         foreach(var taskText in taskTexts) {
@@ -29,11 +29,12 @@ public class PlayerTaskManager : MonoBehaviour {
         }
 
         for(int i = 0; i < tasks.Count; i++) {
-            tasks[i].gameTask.displayText = taskTexts[i];
-            tasks[i].gameTask.UpdateText();
-            tasks[i].gameTask.SetText(tasks[i].description);
-
-            Instantiate(tasks[i].gameTask, new Vector3(0, 0, 0), Quaternion.identity).transform.parent = gameObject.transform;
+            GameTask gameTask = Instantiate(tasks[i].gameTask, new Vector3(0, 0, 0), Quaternion.identity);
+            gameTask.transform.parent = gameObject.transform;
+            
+            gameTask.displayText = taskTexts[i];
+            gameTask.Description = tasks[i].description;
+            gameTask.UpdateText();
         }
     }
 }

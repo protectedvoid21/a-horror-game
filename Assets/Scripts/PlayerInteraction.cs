@@ -18,6 +18,7 @@ public class PlayerInteraction : MonoBehaviour {
 
         if(Physics.Raycast(ray, out RaycastHit hit, interactionRange, layerMask)) {
             OutlineObject outlineHit = hit.collider.GetComponent<OutlineObject>();
+            DoInteraction(hit.collider.gameObject);
 
             if(outlineHit != null) {
                 outlineHit.EnableOutline();
@@ -26,9 +27,7 @@ public class PlayerInteraction : MonoBehaviour {
                         hoveredObject.DisableOutline();
                     }
                 }
-                
                 hoveredObject = outlineHit;
-                DoInteraction(hit.collider.gameObject);
             }
             else {
                 if(hoveredObject != null) {
