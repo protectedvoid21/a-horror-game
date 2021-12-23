@@ -2,33 +2,32 @@ using TMPro;
 using UnityEngine;
 
 public abstract class GameTask : MonoBehaviour, ITask {
-    [HideInInspector] public TextMeshProUGUI displayText;
-    private string _description;
-    public string Description {
-        set {
-            if(string.IsNullOrEmpty(_description)) {
-                _description = value;
-            }
-        }
+    protected TextMeshProUGUI displayText;
+    protected string description;
+
+    protected int requiredCount;
+    protected int collectedCount;
+
+    public void Setup(TaskObject taskObject, TextMeshProUGUI displayText) {
+        description = taskObject.description;
+        requiredCount = taskObject.requiredCount;
+        this.displayText = displayText;
+        
+        UpdateText();
     }
 
-    [SerializeField] protected int requiredCount;
-    private int collectedCount;
-
-    public bool IsCompleted() {
+    public virtual bool IsCompleted() {
         return collectedCount == requiredCount;
     }
 
-    public void UpdateText() {
-        displayText.text = $"{_description} : {collectedCount} / {requiredCount}";
+    protected virtual void UpdateText() {
+        displayText.text = $"{description} : {collectedCount} / {requiredCount}";
 
         if(IsCompleted()) {
             displayText.fontStyle = FontStyles.Strikethrough;
+            displayText.color = Color.gray;
         }
     }
 
-    public void AddEndedTask() {
-        collectedCount++;
-        UpdateText();
-    }
+    public abstract void AddEndedTask();
 }

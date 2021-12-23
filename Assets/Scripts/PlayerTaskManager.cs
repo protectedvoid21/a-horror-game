@@ -29,12 +29,9 @@ public class PlayerTaskManager : MonoBehaviour {
         }
 
         for(int i = 0; i < tasks.Count; i++) {
-            GameTask gameTask = Instantiate(tasks[i].gameTask, new Vector3(0, 0, 0), Quaternion.identity);
-            gameTask.transform.parent = gameObject.transform;
+            GameTask gameTask = Instantiate(tasks[i].gameTask, gameObject.transform, true);
             
-            gameTask.displayText = taskTexts[i];
-            gameTask.Description = tasks[i].description;
-            gameTask.UpdateText();
+            gameTask.Setup(tasks[i], taskTexts[i]);
         }
     }
 }

@@ -43,6 +43,7 @@
   <ItemGroup>
      <Compile Include="Assets\QuickOutline\Scripts\Outline.cs" />
      <Compile Include="Assets\Scripts\PlayerInteraction.cs" />
+     <Compile Include="Assets\Scripts\MultiTask.cs" />
      <Compile Include="Assets\Scripts\IInteractable.cs" />
      <Compile Include="Assets\Scripts\ITask.cs" />
      <Compile Include="Assets\Scripts\PlayerTaskManager.cs" />

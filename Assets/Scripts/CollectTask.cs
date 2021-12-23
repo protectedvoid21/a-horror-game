@@ -6,7 +6,6 @@ public class CollectTask : GameTask {
     [SerializeField] private TaskItem collectObject;
     [SerializeField] private Transform[] spawnPositions;
     
-
     private void Start() {
         if(requiredCount > spawnPositions.Length) {
             Debug.LogWarning("Required count is greater than spawnPositions.Length");
@@ -25,5 +24,10 @@ public class CollectTask : GameTask {
             taskItem.Setup(this);
             spawnIndexList.RemoveAt(randomizedIndex);
         }
+    }
+
+    public override void AddEndedTask() {
+        collectedCount++;
+        UpdateText();
     }
 }

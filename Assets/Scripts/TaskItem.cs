@@ -6,6 +6,7 @@ public class TaskItem : OutlineObject, IInteractable {
 
     public void Setup(GameTask gameTask) {
         onTaskEnded = gameTask.AddEndedTask;
+        print(gameObject.name);
     }
 
     public void Interact() {
