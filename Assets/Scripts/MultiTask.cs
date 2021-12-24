@@ -12,28 +12,35 @@ public class MultiTask : GameTask {
     [SerializeField] private TaskElement[] taskElements;
     private int currentTaskIndex;
 
-    private void Start() {
+    private GameTask currentTask;
+
+    public override void ActivateTask() {
         if(taskElements.Length > 0) {
-            SwitchTask(0);
+            currentTask = SwitchTask(0);
         }
         else {
             Debug.LogError("MultiTask has not got any assigned tasks!");
         }
     }
 
-    private void SwitchTask(int index) {
+    private void Update() {
+        if(currentTask.IsCompleted()) {
+            AddEndedTask();
+        }
+    }
+
+    //switch task nie wywoluje sie bo zaden przedmiot nie wie o odwolaniu sie do tej klasy po zakonczeniu taska
+    private GameTask SwitchTask(int index) {
         TaskObject taskObject = taskElements[index].taskObject;
         
         description = taskObject.description;
         requiredCount = taskObject.requiredCount;
-        //Setup nie wywoluje sie poniewaz monobehaviour musi "zyc" a spawnowanie objektow wywoluje sie w metodzie Start()
-        taskObject.gameTask.Setup(taskObject, displayText);
-        Instantiate(taskElements[index].taskObject.gameTask, gameObject.transform, true);
+        GameTask gameTask = Instantiate(taskObject.gameTask, gameObject.transform, true);
+        gameTask.Setup(taskObject, displayText);
+        gameTask.ActivateTask();
         UpdateText();
-    }
 
-    protected override void UpdateText() {
-        displayText.text = description;
+        return gameTask;
     }
 
     public override bool IsCompleted() {
@@ -48,7 +55,9 @@ public class MultiTask : GameTask {
             displayText.color = Color.gray;
             return;
         }
-        //Czy to nie pierdolnie?
-        SwitchTask(currentTaskIndex);
+        displayText.fontStyle = FontStyles.Normal;
+        displayText.color = Color.white;
+        
+        currentTask = SwitchTask(currentTaskIndex);
     }
 }

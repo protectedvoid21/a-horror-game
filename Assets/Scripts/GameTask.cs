@@ -16,6 +16,8 @@ public abstract class GameTask : MonoBehaviour, ITask {
         UpdateText();
     }
 
+    public abstract void ActivateTask();
+
     public virtual bool IsCompleted() {
         return collectedCount == requiredCount;
     }

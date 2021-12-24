@@ -6,7 +6,7 @@ public class CollectTask : GameTask {
     [SerializeField] private TaskItem collectObject;
     [SerializeField] private Transform[] spawnPositions;
     
-    private void Start() {
+    public override void ActivateTask() {
         if(requiredCount > spawnPositions.Length) {
             Debug.LogWarning("Required count is greater than spawnPositions.Length");
         }
