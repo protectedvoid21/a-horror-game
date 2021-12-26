@@ -16,7 +16,7 @@ public class MultiTask : GameTask {
 
     public override void ActivateTask() {
         if(taskElements.Length > 0) {
-            currentTask = SwitchTask(0);
+            SwitchTask(0);
         }
         else {
             Debug.LogError("MultiTask has not got any assigned tasks!");
@@ -24,23 +24,34 @@ public class MultiTask : GameTask {
     }
 
     private void Update() {
+        if(currentTask == null) {
+            return;
+        }
         if(currentTask.IsCompleted()) {
+            currentTaskIndex++;
+            Destroy(currentTask.gameObject);
+            if(IsCompleted()) {
+                Destroy(gameObject);
+                //z tym destroy to sie jeszcze moze wstrzymaj bo ci zylka peknie
+                //mozliwe ze trzeba bedzie sprawdzic czy gracz wygral poprzez sprawdzenie dla kazdego taska IsCompleted
+                return;
+            }
+            
             AddEndedTask();
+            SwitchTask(currentTaskIndex);
         }
     }
-
-    //switch task nie wywoluje sie bo zaden przedmiot nie wie o odwolaniu sie do tej klasy po zakonczeniu taska
-    private GameTask SwitchTask(int index) {
+    
+    private void SwitchTask(int index) {
         TaskObject taskObject = taskElements[index].taskObject;
         
         description = taskObject.description;
         requiredCount = taskObject.requiredCount;
-        GameTask gameTask = Instantiate(taskObject.gameTask, gameObject.transform, true);
-        gameTask.Setup(taskObject, displayText);
-        gameTask.ActivateTask();
+        
+        currentTask = Instantiate(taskObject.gameTask, gameObject.transform, true);
+        currentTask.Setup(taskObject, displayText);
+        currentTask.ActivateTask();
         UpdateText();
-
-        return gameTask;
     }
 
     public override bool IsCompleted() {
@@ -48,8 +59,6 @@ public class MultiTask : GameTask {
     }
 
     public override void AddEndedTask() {
-        currentTaskIndex++;
-
         if(IsCompleted()) {
             displayText.fontStyle = FontStyles.Strikethrough;
             displayText.color = Color.gray;
@@ -57,7 +66,5 @@ public class MultiTask : GameTask {
         }
         displayText.fontStyle = FontStyles.Normal;
         displayText.color = Color.white;
-        
-        currentTask = SwitchTask(currentTaskIndex);
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class InteractionRotate : MonoBehaviour, IInteractable {
     [SerializeField] private float rotationAmount = 100f;
 
-    private bool isOpen;
+    public bool isOpen { get; private set; }
     private IEnumerator openingDoor;
 
     private float startRotation;

@@ -58,8 +58,8 @@
      <Compile Include="Library\PackageCache\com.unity.test-framework@1.1.29\UnityEditor.TestRunner\TestLaunchers\PostbuildCleanupAttributeFinder.cs" />
      <Compile Include="Library\PackageCache\com.unity.test-framework@1.1.29\UnityEditor.TestRunner\GUI\Views\PlayModeTestListGUI.cs" />
      <Compile Include="Library\PackageCache\com.unity.test-framework@1.1.29\UnityEditor.TestRunner\GUI\TestListBuilder\TestFilterSettings.cs" />
-     <Compile Include="Library\PackageCache\com.unity.test-framework@1.1.29\UnityEditor.TestRunner\Api\TestAdaptor.cs" />
      <Compile Include="Library\PackageCache\com.unity.test-framework@1.1.29\UnityEditor.TestRunner\TestRunner\Messages\RecompileScripts.cs" />
+     <Compile Include="Library\PackageCache\com.unity.test-framework@1.1.29\UnityEditor.TestRunner\Api\TestAdaptor.cs" />
      <Compile Include="Library\PackageCache\com.unity.test-framework@1.1.29\UnityEditor.TestRunner\Api\ITestResultAdaptor.cs" />
      <Compile Include="Library\PackageCache\com.unity.test-framework@1.1.29\UnityEditor.TestRunner\RequireApiProfileAttribute.cs" />
      <Compile Include="Library\PackageCache\com.unity.test-framework@1.1.29\UnityEditor.TestRunner\TestLaunchers\AttributeFinderBase.cs" />

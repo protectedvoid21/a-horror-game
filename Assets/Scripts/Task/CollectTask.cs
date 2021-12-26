@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 
 public class CollectTask : GameTask {
-    [SerializeField] private TaskItem collectObject;
+    [SerializeField] private TaskItemCollect collectObject;
     [SerializeField] private Transform[] spawnPositions;
     
     public override void ActivateTask() {
