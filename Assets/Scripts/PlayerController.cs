@@ -31,6 +31,10 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void Update() {
+        if(Cursor.lockState != CursorLockMode.Locked) {
+            return;
+        }
+        
         float x = Input.GetAxisRaw("Horizontal");
         float z = Input.GetAxisRaw("Vertical");
 

@@ -44,6 +44,8 @@
      <Compile Include="Assets\QuickOutline\Scripts\Outline.cs" />
      <Compile Include="Assets\Scripts\PlayerInteraction.cs" />
      <Compile Include="Assets\Scripts\Task\TaskItemPuzzle.cs" />
+     <Compile Include="Assets\Scripts\CursorUtils.cs" />
+     <Compile Include="Assets\Scripts\ComputerInteraction.cs" />
      <Compile Include="Assets\Scripts\Task\MultiTask.cs" />
      <Compile Include="Assets\Scripts\Task\UnlockTask.cs" />
      <Compile Include="Assets\Scripts\IInteractable.cs" />
@@ -51,15 +53,18 @@
      <Compile Include="Assets\Scripts\Task\ITask.cs" />
      <Compile Include="Assets\Scripts\Task\PlayerTaskManager.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\Task\DownloadTask.cs" />
      <Compile Include="Assets\Scripts\Task\GameTask.cs" />
      <Compile Include="Assets\Scripts\Task\TaskItem.cs" />
      <Compile Include="Assets\Scripts\Task\TaskObject.cs" />
      <Compile Include="Assets\Scripts\HeadBobber.cs" />
+     <Compile Include="Assets\Scripts\InteractionOpen.cs" />
      <Compile Include="Assets\Scripts\Task\TaskObjectList.cs" />
      <Compile Include="Assets\Scripts\InteractionMove.cs" />
      <Compile Include="Assets\Scripts\Task\CollectTask.cs" />
      <Compile Include="Assets\Scripts\OutlineObject.cs" />
      <Compile Include="Assets\Scripts\InteractionRotate.cs" />
+     <Compile Include="Assets\Scripts\InteractableUIObject.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

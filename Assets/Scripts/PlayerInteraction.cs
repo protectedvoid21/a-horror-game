@@ -14,6 +14,10 @@ public class PlayerInteraction : MonoBehaviour {
     }
     
     private void Update() {
+        if(Cursor.lockState == CursorLockMode.None) {
+            return;
+        }
+        
         Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
 
         if(Physics.Raycast(ray, out RaycastHit hit, interactionRange, layerMask)) {

@@ -13,7 +13,7 @@ public class HeadBobber : MonoBehaviour {
     }
 
     private void Update() {
-        if(Mathf.Abs(controller.moveDirection.x) > 0.1f || Mathf.Abs(controller.moveDirection.z) > 0.1f) {
+        if((Mathf.Abs(controller.moveDirection.x) > 0.1f || Mathf.Abs(controller.moveDirection.z) > 0.1f) && Cursor.lockState == CursorLockMode.Locked) {
             timer += Time.deltaTime * walkingBobbingSpeed;
             transform.localPosition = new Vector3(transform.localPosition.x, defaultPosY + Mathf.Sin(timer) * bobbingAmount,
                 transform.localPosition.z);

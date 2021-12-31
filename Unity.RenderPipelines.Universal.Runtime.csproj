@@ -150,8 +150,8 @@
      <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal@12.1.0\Runtime\2D\Light2DCullResult.cs" />
      <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal@12.1.0\Runtime\Tiling\ZBinningJob.cs" />
      <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal@12.1.0\Runtime\PreviousFrameData.cs" />
-     <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal@12.1.0\Runtime\2D\LightUtility.cs" />
      <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal@12.1.0\Runtime\ScriptableRendererFeature.cs" />
+     <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal@12.1.0\Runtime\2D\LightUtility.cs" />
      <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal@12.1.0\Runtime\Passes\PostProcessPass.cs" />
      <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal@12.1.0\Runtime\2D\Light2DBlendStyle.cs" />
      <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal@12.1.0\Runtime\Tiling\LightExtractionJob.cs" />
