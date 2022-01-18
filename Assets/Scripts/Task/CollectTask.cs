@@ -20,7 +20,7 @@ public class CollectTask : GameTask {
         
         for(int i = 0; i < spawnCount; i++) {
             int randomizedIndex = Random.Range(0, spawnIndexList.Count);
-            TaskItem taskItem = Instantiate(collectObject, spawnPositions[spawnIndexList[randomizedIndex]].transform.position, Quaternion.identity);
+            TaskItem taskItem = Instantiate(collectObject, spawnPositions[spawnIndexList[randomizedIndex]].transform.position, collectObject.transform.rotation);
             taskItem.Setup(this);
             spawnIndexList.RemoveAt(randomizedIndex);
         }

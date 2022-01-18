@@ -12,9 +12,17 @@ public class DownloadTask : GameTask {
     [SerializeField] private TextMeshProUGUI percentText;
 
     [SerializeField] private float duration = 5f;
-
-    private bool downloadComplete;
+    
     private IEnumerator downloadProcess;
+
+    private void OnEnable() {
+        startButton.SetActive(true);
+        pressButtonToStartText.SetActive(true);
+        progressObject.SetActive(false);
+        statusText.gameObject.SetActive(false);
+
+        percentText.text = "";
+    }
 
     public void StartDownload() {
         startButton.SetActive(false);
@@ -27,7 +35,9 @@ public class DownloadTask : GameTask {
     }
 
     public void StopDownload() {
-        StopCoroutine(downloadProcess);
+        if(downloadProcess != null) {
+            StopCoroutine(downloadProcess);
+        }
     }
     
     private IEnumerator Download() {
@@ -52,10 +62,8 @@ public class DownloadTask : GameTask {
     }
 
     public override void AddEndedTask() {
-        downloadComplete = true;
-    }
-
-    public override bool IsCompleted() {
-        return downloadComplete;
+        collectedCount++;
+        statusText.text = "Download completed";
+        UpdateText();
     }
 }

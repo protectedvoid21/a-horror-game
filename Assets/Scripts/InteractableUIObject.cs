@@ -2,14 +2,14 @@
 
 public abstract class InteractableUIObject : MonoBehaviour {
     [SerializeField] private GameObject mainPanel;
-    
+
     public virtual void Enter() {
-        CursorUtils.EnableCursor();
+        Utils.EnableCursor();
         mainPanel.SetActive(true);
     }
 
     public virtual void Exit() {
-        CursorUtils.DisableCursor();
+        Utils.DisableCursor();
         mainPanel.SetActive(false);
     }
 }

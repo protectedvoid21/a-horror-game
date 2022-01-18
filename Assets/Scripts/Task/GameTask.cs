@@ -26,8 +26,7 @@ public abstract class GameTask : MonoBehaviour, ITask {
         displayText.text = $"{description} : {collectedCount} / {requiredCount}";
 
         if(IsCompleted()) {
-            displayText.fontStyle = FontStyles.Strikethrough;
-            displayText.color = Color.gray;
+            Utils.GreyTaskText(displayText);
         }
     }
 

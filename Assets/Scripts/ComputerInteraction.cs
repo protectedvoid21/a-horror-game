@@ -4,10 +4,11 @@ using UnityEngine.UI;
 
 public class ComputerInteraction : InteractableUIObject {
     [SerializeField] private GameObject buttonPanel;
+    [SerializeField] private Transform viewsObject;
     [Space]
     [SerializeField] private Button taskButton;
     [SerializeField] private GameObject cctvView;
-    [SerializeField] private GameObject taskDownload;
+    private GameObject downloadObject;
     [SerializeField] private TextMeshProUGUI taskText;
 
     private DownloadTask downloadTask;
@@ -31,29 +32,32 @@ public class ComputerInteraction : InteractableUIObject {
     }
 
     public override void Exit() {
-        base.Exit();
-        
-        taskDownload.SetActive(false);
         cctvView.SetActive(false);
 
         if(downloadTask != null) {
+            downloadObject.SetActive(false);
             if(!downloadTask.IsCompleted()) {
                 downloadTask.StopDownload();
             }
         }
+        
+        base.Exit();
     }
     
     public void SetupDownloadTask(DownloadTask downloadTask) {
         this.downloadTask = downloadTask;
+        downloadTask.transform.SetParent(viewsObject, false);
+        downloadObject = downloadTask.gameObject;
+        downloadObject.SetActive(false);
     }
 
     public void CctvView() {
-        cctvView.SetActive(true);
         buttonPanel.SetActive(false);
+        cctvView.SetActive(true);
     }
 
     public void TaskDownloadView() {
         buttonPanel.SetActive(false);
-        taskDownload.SetActive(true);
+        downloadObject.SetActive(true);
     }
 }

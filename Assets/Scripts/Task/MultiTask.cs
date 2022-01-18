@@ -60,8 +60,7 @@ public class MultiTask : GameTask {
 
     public override void AddEndedTask() {
         if(IsCompleted()) {
-            displayText.fontStyle = FontStyles.Strikethrough;
-            displayText.color = Color.gray;
+            Utils.GreyTaskText(displayText);
             return;
         }
         displayText.fontStyle = FontStyles.Normal;

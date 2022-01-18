@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
-public class InteractionOpen : OutlineObject, IInteractable {
+[RequireComponent(typeof(OutlineObject))]
+public class InteractionOpen : MonoBehaviour, IInteractable {
     [SerializeField] private InteractableUIObject interactableUIObject;
     
     public void Interact() {
