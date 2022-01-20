@@ -1,11 +1,14 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class CollectTask : GameTask {
     [SerializeField] private TaskItemCollect collectObject;
     [SerializeField] private Transform[] spawnPositions;
-    
+    [SerializeField] private bool useSpawnPositionRotation;
+
     public override void ActivateTask() {
         if(requiredCount > spawnPositions.Length) {
             Debug.LogWarning("Required count is greater than spawnPositions.Length");
@@ -17,10 +20,11 @@ public class CollectTask : GameTask {
         for(int i = 0; i < spawnPositions.Length; i++) {
             spawnIndexList.Add(i);
         }
-        
+
         for(int i = 0; i < spawnCount; i++) {
             int randomizedIndex = Random.Range(0, spawnIndexList.Count);
-            TaskItem taskItem = Instantiate(collectObject, spawnPositions[spawnIndexList[randomizedIndex]].transform.position, collectObject.transform.rotation);
+            Quaternion spawnRotation = useSpawnPositionRotation ? spawnPositions[i].rotation : collectObject.transform.rotation;
+            TaskItem taskItem = Instantiate(collectObject, spawnPositions[spawnIndexList[randomizedIndex]].transform.position, spawnRotation);
             taskItem.Setup(this);
             spawnIndexList.RemoveAt(randomizedIndex);
         }

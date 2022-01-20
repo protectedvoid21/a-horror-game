@@ -42,6 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\QuickOutline\Scripts\Outline.cs" />
+     <Compile Include="Assets\Scripts\Task\PinTask.cs" />
      <Compile Include="Assets\Scripts\PlayerInteraction.cs" />
      <Compile Include="Assets\Scripts\Task\TaskItemPuzzle.cs" />
      <Compile Include="Assets\Scripts\Utils.cs" />
@@ -50,8 +51,10 @@
      <Compile Include="Assets\Scripts\Task\UnlockTask.cs" />
      <Compile Include="Assets\Scripts\IInteractable.cs" />
      <Compile Include="Assets\Scripts\Task\TaskItemCollect.cs" />
+     <Compile Include="Assets\Scripts\Task\CodeSetter.cs" />
      <Compile Include="Assets\Scripts\Task\ITask.cs" />
      <Compile Include="Assets\Scripts\Task\PlayerTaskManager.cs" />
+     <Compile Include="Assets\Scripts\Task\PinCodeUI.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Task\DownloadTask.cs" />
      <Compile Include="Assets\Scripts\InteractableUIObject.cs" />

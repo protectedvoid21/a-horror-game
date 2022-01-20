@@ -29,7 +29,7 @@ public class PlayerTaskManager : MonoBehaviour {
         }
 
         for(int i = 0; i < tasks.Count; i++) {
-            GameTask gameTask = Instantiate(tasks[i].gameTask, gameObject.transform, true);
+            GameTask gameTask = Instantiate(tasks[i].gameTask, transform, true);
             gameTask.Setup(tasks[i], taskTexts[i]);
             gameTask.ActivateTask();
         }

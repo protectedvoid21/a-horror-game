@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
-
+/// <summary>
+/// Connects user interaction with UI panel. Put on object inside canvas.
+/// </summary>
 public abstract class InteractableUIObject : MonoBehaviour {
     [SerializeField] private GameObject mainPanel;
 
