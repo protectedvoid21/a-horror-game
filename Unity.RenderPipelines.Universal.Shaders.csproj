@@ -416,6 +416,9 @@
      <Reference Include="UnityEditor.WindowsStandalone.Extensions">
      <HintPath>D:/Programy/Unity Engine/2021.2.0f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.Collections.LowLevel.ILSupport">
+     <HintPath>D:/Programowanie/Unity_projects/Shooter/Library/PackageCache/com.unity.collections@1.1.0/Unity.Collections.LowLevel.ILSupport/Unity.Collections.LowLevel.ILSupport.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.Plastic.Newtonsoft.Json">
      <HintPath>D:/Programowanie/Unity_projects/Shooter/Library/PackageCache/com.unity.collab-proxy@1.13.5/Lib/Editor/PlasticSCM/Unity.Plastic.Newtonsoft.Json.dll</HintPath>
      </Reference>
@@ -457,6 +460,9 @@
      </Reference>
      <Reference Include="Newtonsoft.Json">
      <HintPath>D:/Programowanie/Unity_projects/Shooter/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
+     </Reference>
+     <Reference Include="Mono.Cecil">
+     <HintPath>D:/Programowanie/Unity_projects/Shooter/Library/PackageCache/com.unity.nuget.mono-cecil@1.10.1/Mono.Cecil.dll</HintPath>
      </Reference>
      <Reference Include="netstandard">
      <HintPath>D:/Programy/Unity Engine/2021.2.0f1/Editor/Data/NetStandard/ref/2.1.0/netstandard.dll</HintPath>

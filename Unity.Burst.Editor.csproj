@@ -41,18 +41,18 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Library\PackageCache\com.unity.burst@1.6.0\Editor\BurstDisassembler.Core.ARM64.cs" />
      <Compile Include="Library\PackageCache\com.unity.burst@1.6.0\Editor\BurstLoader.cs" />
      <Compile Include="Library\PackageCache\com.unity.burst@1.6.0\Editor\LongTextArea.cs" />
+     <Compile Include="Library\PackageCache\com.unity.burst@1.6.0\Editor\BurstAotCompiler.cs" />
+     <Compile Include="Library\PackageCache\com.unity.burst@1.6.0\Editor\BurstDisassembler.Core.Wasm.cs" />
+     <Compile Include="Library\PackageCache\com.unity.burst@1.6.0\Editor\BurstDisassembler.Core.LLVMIR.cs" />
+     <Compile Include="Library\PackageCache\com.unity.burst@1.6.0\Editor\BurstDisassembler.Core.ARM64.cs" />
      <Compile Include="Library\PackageCache\com.unity.burst@1.6.0\Editor\BurstInspectorGUI.cs" />
      <Compile Include="Library\PackageCache\com.unity.burst@1.6.0\Editor\BurstAotSettings.cs" />
      <Compile Include="Library\PackageCache\com.unity.burst@1.6.0\Editor\BurstMenu.cs" />
      <Compile Include="Library\PackageCache\com.unity.burst@1.6.0\Editor\BurstDisassembler.cs" />
      <Compile Include="Library\PackageCache\com.unity.burst@1.6.0\Editor\BurstDisassembler.Core.cs" />
      <Compile Include="Library\PackageCache\com.unity.burst@1.6.0\Editor\BurstDisassembler.Core.x86.cs" />
-     <Compile Include="Library\PackageCache\com.unity.burst@1.6.0\Editor\BurstAotCompiler.cs" />
-     <Compile Include="Library\PackageCache\com.unity.burst@1.6.0\Editor\BurstDisassembler.Core.Wasm.cs" />
-     <Compile Include="Library\PackageCache\com.unity.burst@1.6.0\Editor\BurstDisassembler.Core.LLVMIR.cs" />
      <None Include="Library\PackageCache\com.unity.burst@1.6.0\Editor\Unity.Burst.Editor.asmdef" />
      <Reference Include="UnityEngine">
      <HintPath>D:/Programy/Unity Engine/2021.2.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -309,6 +309,9 @@
      <Reference Include="UnityEditor.WindowsStandalone.Extensions">
      <HintPath>D:/Programy/Unity Engine/2021.2.0f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.Collections.LowLevel.ILSupport">
+     <HintPath>D:/Programowanie/Unity_projects/Shooter/Library/PackageCache/com.unity.collections@1.1.0/Unity.Collections.LowLevel.ILSupport/Unity.Collections.LowLevel.ILSupport.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.Plastic.Newtonsoft.Json">
      <HintPath>D:/Programowanie/Unity_projects/Shooter/Library/PackageCache/com.unity.collab-proxy@1.13.5/Lib/Editor/PlasticSCM/Unity.Plastic.Newtonsoft.Json.dll</HintPath>
      </Reference>
@@ -350,6 +353,9 @@
      </Reference>
      <Reference Include="Newtonsoft.Json">
      <HintPath>D:/Programowanie/Unity_projects/Shooter/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
+     </Reference>
+     <Reference Include="Mono.Cecil">
+     <HintPath>D:/Programowanie/Unity_projects/Shooter/Library/PackageCache/com.unity.nuget.mono-cecil@1.10.1/Mono.Cecil.dll</HintPath>
      </Reference>
      <Reference Include="nunit.framework">
      <HintPath>D:/Programowanie/Unity_projects/Shooter/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
@@ -728,13 +734,13 @@
       <Project>{2b92f0d0-9ee1-c43a-3cfa-e888de82c075}</Project>
       <Name>UnityEngine.UI</Name>
     </ProjectReference>
-    <ProjectReference Include="UnityEngine.TestRunner.csproj">
-      <Project>{6eb7efa3-ebf4-7070-a41e-b30359efa821}</Project>
-      <Name>UnityEngine.TestRunner</Name>
-    </ProjectReference>
     <ProjectReference Include="UnityEditor.TestRunner.csproj">
       <Project>{4b2c9843-f6e6-0b01-29fd-99012a90ffe1}</Project>
       <Name>UnityEditor.TestRunner</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.TestRunner.csproj">
+      <Project>{6eb7efa3-ebf4-7070-a41e-b30359efa821}</Project>
+      <Name>UnityEngine.TestRunner</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

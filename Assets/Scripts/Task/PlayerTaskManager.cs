@@ -8,7 +8,7 @@ public class PlayerTaskManager : MonoBehaviour {
 
     [SerializeField] private int requiredTasksToStart = 3;
 
-    private List<TaskObject> tasks = new List<TaskObject>();
+    public List<TaskObject> Tasks { get; private set; } = new List<TaskObject>();
 
     private void Start() {
         foreach(var taskText in taskTexts) {
@@ -20,17 +20,17 @@ public class PlayerTaskManager : MonoBehaviour {
             return;
         }
         
-        while(tasks.Count < requiredTasksToStart) {
+        while(Tasks.Count < requiredTasksToStart) {
             int rng = Random.Range(0, taskObjectList.taskObjects.Length);
             
-            if(!tasks.Contains(taskObjectList.taskObjects[rng])) { 
-                tasks.Add(taskObjectList.taskObjects[rng]);
+            if(!Tasks.Contains(taskObjectList.taskObjects[rng])) { 
+                Tasks.Add(taskObjectList.taskObjects[rng]);
             }
         }
 
-        for(int i = 0; i < tasks.Count; i++) {
-            GameTask gameTask = Instantiate(tasks[i].gameTask, transform, true);
-            gameTask.Setup(tasks[i], taskTexts[i]);
+        for(int i = 0; i < Tasks.Count; i++) {
+            GameTask gameTask = Instantiate(Tasks[i].gameTask, transform, true);
+            gameTask.Setup(Tasks[i], taskTexts[i]);
             gameTask.ActivateTask();
         }
     }

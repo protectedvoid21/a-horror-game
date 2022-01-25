@@ -1,7 +1,8 @@
 ﻿using System;
+using Unity.Netcode;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : NetworkBehaviour {
     [SerializeField] private Transform cameraTransform;
     private CharacterController characterController;
 
@@ -31,6 +32,10 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void Update() {
+        if(!IsLocalPlayer) {
+            return;
+        }
+        
         if(Cursor.lockState != CursorLockMode.Locked) {
             return;
         }
