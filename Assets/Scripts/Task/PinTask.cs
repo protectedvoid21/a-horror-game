@@ -15,8 +15,4 @@ public class PinTask : GameTask {
     public override bool IsCompleted() {
         return isCompleted;
     }
-
-    public override void AddEndedTask() {
-        isCompleted = true;
-    }
 }

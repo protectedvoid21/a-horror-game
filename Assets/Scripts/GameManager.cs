@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class GameManager : NetworkBehaviour {
     [SerializeField] private GameObject playerPrefab;
-    private List<PlayerManager> players;
+    //private List<PlayerManager> players;
 
-    public override void OnNetworkSpawn() {
+    private void Start() {
         if(!IsServer) {
             return;
         }

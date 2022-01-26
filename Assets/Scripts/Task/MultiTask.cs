@@ -11,6 +11,7 @@ public class MultiTask : GameTask {
 
     [SerializeField] private TaskElement[] taskElements;
     private int currentTaskIndex;
+    private Action OnTaskCompleted;
 
     private GameTask currentTask;
 
@@ -31,13 +32,13 @@ public class MultiTask : GameTask {
             currentTaskIndex++;
             Destroy(currentTask.gameObject);
             if(IsCompleted()) {
-                Destroy(gameObject);
+                EndTask();
+                //Destroy(gameObject);
                 //z tym destroy to sie jeszcze moze wstrzymaj bo ci zylka peknie
                 //mozliwe ze trzeba bedzie sprawdzic czy gracz wygral poprzez sprawdzenie dla kazdego taska IsCompleted
                 return;
             }
-            
-            AddEndedTask();
+
             SwitchTask(currentTaskIndex);
         }
     }
@@ -49,21 +50,15 @@ public class MultiTask : GameTask {
         requiredCount = taskObject.requiredCount;
         
         currentTask = Instantiate(taskObject.gameTask, gameObject.transform, true);
-        currentTask.Setup(taskObject, displayText);
+        currentTask.Setup(taskObject, displayText, OnTaskCompleted);
         currentTask.ActivateTask();
+        
+        displayText.fontStyle = FontStyles.Normal;
+        displayText.color = Color.white;
         UpdateText();
     }
 
     public override bool IsCompleted() {
         return currentTaskIndex == taskElements.Length;
-    }
-
-    public override void AddEndedTask() {
-        if(IsCompleted()) {
-            Utils.GreyTaskText(displayText);
-            return;
-        }
-        displayText.fontStyle = FontStyles.Normal;
-        displayText.color = Color.white;
     }
 }

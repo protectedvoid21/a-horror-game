@@ -5,7 +5,7 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class CollectTask : GameTask {
-    [SerializeField] private TaskItemCollect collectObject;
+    [SerializeField] private TaskItem collectObject;
     [SerializeField] private Transform[] spawnPositions;
     [SerializeField] private bool useSpawnPositionRotation;
 
@@ -30,7 +30,7 @@ public class CollectTask : GameTask {
         }
     }
 
-    public override void AddEndedTask() {
+    public void AddPickedUpItem() {
         collectedCount++;
         UpdateText();
     }

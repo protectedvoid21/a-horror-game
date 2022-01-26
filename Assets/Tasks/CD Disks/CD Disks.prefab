@@ -100,6 +100,7 @@ MonoBehaviour:
   - {fileID: 4256727993342162883}
   - {fileID: 6967434334033321894}
   - {fileID: 1039386108971195884}
+  useSpawnPositionRotation: 0
 --- !u!1 &2504104618270429463
 GameObject:
   m_ObjectHideFlags: 0

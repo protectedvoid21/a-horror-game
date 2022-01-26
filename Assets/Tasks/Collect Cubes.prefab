@@ -54,6 +54,7 @@ MonoBehaviour:
   - {fileID: 3102866102336701675}
   - {fileID: 3761724103481534547}
   - {fileID: 2233754863766093708}
+  useSpawnPositionRotation: 0
 --- !u!1001 &3900242481286134430
 PrefabInstance:
   m_ObjectHideFlags: 0

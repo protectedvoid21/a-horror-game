@@ -31,7 +31,7 @@ public class PinCodeUI : InteractableUIObject {
         }
         Debug.Log("PIN Applied");
         statusText.text = "PIN confirmation success";
-        FindObjectOfType<PinTask>().AddEndedTask();
+        FindObjectOfType<PinTask>().EndTask();
         applyButton.enabled = false;
         enabled = false;
     }

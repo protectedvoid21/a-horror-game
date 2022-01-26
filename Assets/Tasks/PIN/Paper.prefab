@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 7144789658328465196}
   - component: {fileID: 1575293802930966250}
   - component: {fileID: 4439865236261252335}
-  - component: {fileID: 859789671288797364}
   - component: {fileID: 1625156855363732115}
+  - component: {fileID: 7890978244211479806}
   m_Layer: 0
   m_Name: Paper
   m_TagString: Untagged
@@ -104,20 +104,6 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
---- !u!114 &859789671288797364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2047989336658378171}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 477f895f56514951870e53844a1eedb7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  requireHover: 0
-  highlightRange: 15
 --- !u!64 &1625156855363732115
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -132,3 +118,17 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &7890978244211479806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047989336658378171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 204f4f82d2ee41709d92fb7c042ce61e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requireHover: 0
+  highlightRange: 15

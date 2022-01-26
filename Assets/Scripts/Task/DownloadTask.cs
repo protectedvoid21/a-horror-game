@@ -54,16 +54,14 @@ public class DownloadTask : GameTask {
         progressBar.fillAmount = 1f;
         percentText.text = "100%";
 
-        AddEndedTask();
+        
+        collectedCount++;
+        statusText.text = "Download completed";
+        UpdateText();
+        EndTask();
     }
 
     public override void ActivateTask() {
         FindObjectOfType<ComputerInteraction>().SetupDownloadTask(this);
-    }
-
-    public override void AddEndedTask() {
-        collectedCount++;
-        statusText.text = "Download completed";
-        UpdateText();
     }
 }

@@ -49,6 +49,7 @@ MonoBehaviour:
     type: 3}
   spawnPositions:
   - {fileID: 8164269321879234485}
+  useSpawnPositionRotation: 0
 --- !u!1 &8898251209293170059
 GameObject:
   m_ObjectHideFlags: 0

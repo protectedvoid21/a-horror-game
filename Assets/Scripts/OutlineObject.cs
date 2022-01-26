@@ -8,7 +8,7 @@ public class OutlineObject : MonoBehaviour {
 
     private Transform playerTransform;
 
-    protected virtual void Awake() {
+    protected virtual void Start() {
         outline = GetComponent<Outline>();
         outline.enabled = false;
 

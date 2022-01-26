@@ -126,8 +126,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 2473512135875138816}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 477f895f56514951870e53844a1eedb7, type: 3}
+  m_Script: {fileID: 11500000, guid: 204f4f82d2ee41709d92fb7c042ce61e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   requireHover: 0
-  highlightRange: 5
+  highlightRange: 15

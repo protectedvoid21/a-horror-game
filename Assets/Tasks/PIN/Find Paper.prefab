@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bca4849b9d30444cb6359e958133adc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectObject: {fileID: 859789671288797364, guid: a91f258cfe1825842be055cbf252cec5,
+  collectObject: {fileID: 7890978244211479806, guid: a91f258cfe1825842be055cbf252cec5,
     type: 3}
   spawnPositions:
   - {fileID: 5609499833684981683}
@@ -125,6 +125,7 @@ MonoBehaviour:
   - {fileID: 6188522629700334202}
   - {fileID: 7913156077165314212}
   - {fileID: 5277566133369219916}
+  useSpawnPositionRotation: 0
 --- !u!1 &4980463778060920176
 GameObject:
   m_ObjectHideFlags: 0

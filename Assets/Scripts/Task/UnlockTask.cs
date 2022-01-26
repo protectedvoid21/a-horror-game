@@ -14,12 +14,11 @@ public class UnlockTask : GameTask {
 
     public override bool IsCompleted() {
         if(interactionRotate != null) {
-            return interactionRotate.isOpen;
+            if(interactionRotate.isOpen) {
+                EndTask();
+                return true;
+            }
         }
         return false;
-    }
-    
-    public override void AddEndedTask() {
-        UpdateText();
     }
 }
