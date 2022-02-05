@@ -21,14 +21,17 @@ public class PlayerController : NetworkBehaviour {
     private float YRotation;
     private bool isGrounded;
 
-    private void Awake() {
-        characterController = GetComponent<CharacterController>();
-    }
-
     private void Start() {
         speed = startSpeed;
         
         Cursor.visible = false;
+
+        characterController = GetComponent<CharacterController>();
+
+        if(!IsLocalPlayer) {
+            cameraTransform.gameObject.GetComponent<Camera>().enabled = false;
+            cameraTransform.gameObject.GetComponent<AudioListener>().enabled = false;
+        }
     }
 
     private void Update() {

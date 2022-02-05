@@ -41,15 +41,15 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Library\PackageCache\com.unity.netcode.gameobjects@1.0.0-pre.4\Editor\CodeGen\RuntimeAccessModifiersILPP.cs" />
-     <Compile Include="Library\PackageCache\com.unity.netcode.gameobjects@1.0.0-pre.4\Editor\CodeGen\PostProcessorReflectionImporter.cs" />
-     <Compile Include="Library\PackageCache\com.unity.netcode.gameobjects@1.0.0-pre.4\Editor\CodeGen\INetworkMessageILPP.cs" />
-     <Compile Include="Library\PackageCache\com.unity.netcode.gameobjects@1.0.0-pre.4\Editor\CodeGen\CodeGenHelpers.cs" />
-     <Compile Include="Library\PackageCache\com.unity.netcode.gameobjects@1.0.0-pre.4\Editor\CodeGen\PostProcessorAssemblyResolver.cs" />
-     <Compile Include="Library\PackageCache\com.unity.netcode.gameobjects@1.0.0-pre.4\Editor\CodeGen\NetworkBehaviourILPP.cs" />
-     <Compile Include="Library\PackageCache\com.unity.netcode.gameobjects@1.0.0-pre.4\Editor\CodeGen\INetworkSerializableILPP.cs" />
-     <Compile Include="Library\PackageCache\com.unity.netcode.gameobjects@1.0.0-pre.4\Editor\CodeGen\PostProcessorReflectionImporterProvider.cs" />
-     <None Include="Library\PackageCache\com.unity.netcode.gameobjects@1.0.0-pre.4\Editor\CodeGen\com.unity.netcode.editor.codegen.asmdef" />
+     <Compile Include="Library\PackageCache\com.unity.netcode.gameobjects@1.0.0-pre.5\Editor\CodeGen\RuntimeAccessModifiersILPP.cs" />
+     <Compile Include="Library\PackageCache\com.unity.netcode.gameobjects@1.0.0-pre.5\Editor\CodeGen\PostProcessorReflectionImporter.cs" />
+     <Compile Include="Library\PackageCache\com.unity.netcode.gameobjects@1.0.0-pre.5\Editor\CodeGen\INetworkMessageILPP.cs" />
+     <Compile Include="Library\PackageCache\com.unity.netcode.gameobjects@1.0.0-pre.5\Editor\CodeGen\CodeGenHelpers.cs" />
+     <Compile Include="Library\PackageCache\com.unity.netcode.gameobjects@1.0.0-pre.5\Editor\CodeGen\PostProcessorAssemblyResolver.cs" />
+     <Compile Include="Library\PackageCache\com.unity.netcode.gameobjects@1.0.0-pre.5\Editor\CodeGen\NetworkBehaviourILPP.cs" />
+     <Compile Include="Library\PackageCache\com.unity.netcode.gameobjects@1.0.0-pre.5\Editor\CodeGen\INetworkSerializableILPP.cs" />
+     <Compile Include="Library\PackageCache\com.unity.netcode.gameobjects@1.0.0-pre.5\Editor\CodeGen\PostProcessorReflectionImporterProvider.cs" />
+     <None Include="Library\PackageCache\com.unity.netcode.gameobjects@1.0.0-pre.5\Editor\CodeGen\com.unity.netcode.editor.codegen.asmdef" />
      <Reference Include="UnityEngine">
      <HintPath>D:/Programy/Unity Engine/2021.2.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
      </Reference>

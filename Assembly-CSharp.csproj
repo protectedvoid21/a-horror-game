@@ -62,8 +62,7 @@
      <Compile Include="Assets\Scripts\Task\UnlockTask.cs" />
      <Compile Include="Assets\Scripts\IInteractable.cs" />
      <Compile Include="Assets\Scripts\Task\CodeSetter.cs" />
-     <Compile Include="Assets\Scripts\Task\ITask.cs" />
-     <Compile Include="Assets\Scripts\Task\PlayerTaskManager.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerTaskManager.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Lobby.cs" />
      <Compile Include="Assets\Scripts\MenuManager.cs" />
@@ -920,6 +919,10 @@
     <ProjectReference Include="Unity.Mathematics.csproj">
       <Project>{7d3f9a96-04d0-b544-4e04-b869c79894d4}</Project>
       <Name>Unity.Mathematics</Name>
+    </ProjectReference>
+    <ProjectReference Include="ParrelSync.csproj">
+      <Project>{9712ff7f-8639-d03c-3514-a6f98352cf39}</Project>
+      <Name>ParrelSync</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Burst.csproj">
       <Project>{10493dd4-dd5c-fb47-2cd3-cf612139fb3d}</Project>

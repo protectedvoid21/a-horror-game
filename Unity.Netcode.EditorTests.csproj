@@ -41,7 +41,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <None Include="Library\PackageCache\com.unity.netcode.gameobjects@1.0.0-pre.4\Tests\Editor\com.unity.netcode.editortests.asmdef" />
+     <None Include="Library\PackageCache\com.unity.netcode.gameobjects@1.0.0-pre.5\Tests\Editor\com.unity.netcode.editortests.asmdef" />
      <Reference Include="UnityEngine">
      <HintPath>D:/Programy/Unity Engine/2021.2.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
      </Reference>

@@ -2,7 +2,7 @@ using System;
 using TMPro;
 using UnityEngine;
 
-public abstract class GameTask : MonoBehaviour, ITask {
+public abstract class GameTask : MonoBehaviour {
     protected TextMeshProUGUI displayText;
     protected string description;
 

@@ -87,6 +87,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.VisualScripting.Flow.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Multiplayer.NetworkProfiler.Editor", "Unity.Multiplayer.NetworkProfiler.Editor.csproj", "{7bae8196-8315-b53e-60cc-662d0b0a3d91}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParrelSync", "ParrelSync.csproj", "{9712ff7f-8639-d03c-3514-a6f98352cf39}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Netcode.Editor", "Unity.Netcode.Editor.csproj", "{7075d134-7524-1541-7bf4-775eff90829a}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Rider.Editor", "Unity.Rider.Editor.csproj", "{13e3c0fb-7e8f-307e-8b38-a211622654c2}"
@@ -346,6 +348,8 @@ Global
 		{30e9dd1e-6a72-c2f1-acd6-57009359f1ac}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7bae8196-8315-b53e-60cc-662d0b0a3d91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7bae8196-8315-b53e-60cc-662d0b0a3d91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9712ff7f-8639-d03c-3514-a6f98352cf39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9712ff7f-8639-d03c-3514-a6f98352cf39}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7075d134-7524-1541-7bf4-775eff90829a}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7075d134-7524-1541-7bf4-775eff90829a}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13e3c0fb-7e8f-307e-8b38-a211622654c2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : NetworkBehaviour {
     [SerializeField] private GameObject playerPrefab;
-    //private List<PlayerManager> players;
+    [SerializeField] private Transform spawnTransform;
 
     private void Start() {
         if(!IsServer) {
@@ -18,7 +18,7 @@ public class GameManager : NetworkBehaviour {
     
     [ServerRpc(RequireOwnership = false)]
     private void SpawnPlayerServerRpc(ulong clientId) {
-        GameObject player = Instantiate(playerPrefab);
+        GameObject player = Instantiate(playerPrefab, spawnTransform.position, Quaternion.identity);
         NetworkObject playerNetwork = player.GetComponent<NetworkObject>();
         
         playerNetwork.SpawnAsPlayerObject(clientId);

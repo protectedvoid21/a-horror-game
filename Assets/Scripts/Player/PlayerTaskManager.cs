@@ -11,12 +11,14 @@ public class PlayerTaskManager : MonoBehaviour {
 
     [SerializeField] private int requiredTasksToStart = 3;
 
-    public Action OnTasksCompleted; 
+    private Action OnTasksCompleted;
+    private Action OnTaskCompletedSurvivor;
 
     private List<TaskObject> tasks = new List<TaskObject>();
     private List<GameTask> gameTasks = new List<GameTask>();
 
     private void Start() {
+        OnTasksCompleted += MarkCompleted;
         foreach(var taskText in taskTexts) {
             taskText.text = "";
         }
@@ -39,6 +41,16 @@ public class PlayerTaskManager : MonoBehaviour {
             gameTask.Setup(tasks[i], taskTexts[i], OnTasksCompleted);
             gameTask.ActivateTask();
             gameTasks.Add(gameTask);
+        }
+    }
+
+    public void PassActionReference(Action onTasksCompletedSurvivor) {
+        OnTaskCompletedSurvivor = onTasksCompletedSurvivor;
+    }
+
+    private void MarkCompleted() {
+        if(AllTaskCompleted()) {
+            OnTaskCompletedSurvivor?.Invoke();
         }
     }
 
