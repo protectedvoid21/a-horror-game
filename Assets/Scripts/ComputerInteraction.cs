@@ -8,6 +8,7 @@ public class ComputerInteraction : InteractableUIObject {
     [Space]
     [SerializeField] private Button taskButton;
     [SerializeField] private GameObject cctvView;
+    [SerializeField] private Camera[] cctvCameras;
     private GameObject downloadObject;
     [SerializeField] private TextMeshProUGUI taskText;
 
@@ -33,6 +34,9 @@ public class ComputerInteraction : InteractableUIObject {
 
     public override void Exit() {
         cctvView.SetActive(false);
+        foreach(var camera in cctvCameras) {
+            camera.enabled = false;
+        }
 
         if(downloadTask != null) {
             downloadObject.SetActive(false);
@@ -53,6 +57,10 @@ public class ComputerInteraction : InteractableUIObject {
 
     public void CctvView() {
         buttonPanel.SetActive(false);
+
+        foreach(var camera in cctvCameras) {
+            camera.enabled = true;
+        }
         cctvView.SetActive(true);
     }
 

@@ -3,24 +3,37 @@ using Unity.Netcode;
 using UnityEngine;
 
 public class GameManager : NetworkBehaviour {
-    [SerializeField] private GameObject playerPrefab;
+    [SerializeField] private GameObject survivorPrefab;
+    [SerializeField] private GameObject attackerPrefab;
     [SerializeField] private Transform spawnTransform;
 
+    private ulong attackerId; 
+    
     private void Start() {
         if(!IsServer) {
             return;
         }
 
+        attackerId = GetAttackerClientId();
         foreach(var client in NetworkManager.Singleton.ConnectedClientsList) {
             SpawnPlayerServerRpc(client.ClientId);
         }
     }
+
+    private ulong GetAttackerClientId() {
+        int randomizedIndex = Random.Range(0, NetworkManager.Singleton.ConnectedClientsList.Count);
+
+        return NetworkManager.Singleton.ConnectedClientsList[randomizedIndex].ClientId;
+    }
     
     [ServerRpc(RequireOwnership = false)]
     private void SpawnPlayerServerRpc(ulong clientId) {
-        GameObject player = Instantiate(playerPrefab, spawnTransform.position, Quaternion.identity);
-        NetworkObject playerNetwork = player.GetComponent<NetworkObject>();
+        GameObject prefabToSpawn = survivorPrefab;
+        if(clientId == attackerId) {
+            prefabToSpawn = attackerPrefab;
+        }
         
-        playerNetwork.SpawnAsPlayerObject(clientId);
+        GameObject player = Instantiate(prefabToSpawn, spawnTransform.position, Quaternion.identity);
+        player.GetComponent<NetworkObject>().SpawnAsPlayerObject(clientId);
     }
 }

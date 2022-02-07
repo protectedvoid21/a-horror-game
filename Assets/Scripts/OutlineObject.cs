@@ -8,14 +8,14 @@ public class OutlineObject : MonoBehaviour {
 
     private Transform playerTransform;
 
-    protected virtual void Start() {
+    private void Start() {
         outline = GetComponent<Outline>();
         outline.enabled = false;
 
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    protected virtual void Update() {
+    private void Update() {
         if(requireHover) {
             return;
         }

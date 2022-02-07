@@ -2,27 +2,28 @@
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using Unity.Netcode;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class PlayerTaskManager : MonoBehaviour {
+public class PlayerTaskManager : NetworkBehaviour {
     [SerializeField] private TaskObjectList taskObjectList;
     [SerializeField] private TextMeshProUGUI[] taskTexts;
 
     [SerializeField] private int requiredTasksToStart = 3;
 
     private Action OnTasksCompleted;
-    private Action OnTaskCompletedSurvivor;
+    private Action OnTaskCompletedPlayer;
 
     private List<TaskObject> tasks = new List<TaskObject>();
     private List<GameTask> gameTasks = new List<GameTask>();
 
-    private void Start() {
-        OnTasksCompleted += MarkCompleted;
+    public override void OnNetworkSpawn() {
         foreach(var taskText in taskTexts) {
             taskText.text = "";
         }
-        
+        OnTasksCompleted += MarkCompleted;
+
         if(taskObjectList.taskObjects.Length < requiredTasksToStart) {
             Debug.LogWarning("Not enough tasks");
             return;
@@ -45,12 +46,12 @@ public class PlayerTaskManager : MonoBehaviour {
     }
 
     public void PassActionReference(Action onTasksCompletedSurvivor) {
-        OnTaskCompletedSurvivor = onTasksCompletedSurvivor;
+        OnTaskCompletedPlayer = onTasksCompletedSurvivor;
     }
 
     private void MarkCompleted() {
         if(AllTaskCompleted()) {
-            OnTaskCompletedSurvivor?.Invoke();
+            OnTaskCompletedPlayer?.Invoke();
         }
     }
 

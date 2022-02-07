@@ -61,6 +61,7 @@
      <Compile Include="Assets\Scripts\ComputerInteraction.cs" />
      <Compile Include="Assets\Scripts\Task\UnlockTask.cs" />
      <Compile Include="Assets\Scripts\IInteractable.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerAttacker.cs" />
      <Compile Include="Assets\Scripts\Task\CodeSetter.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerTaskManager.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
