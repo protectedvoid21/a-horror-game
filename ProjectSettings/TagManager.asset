@@ -6,6 +6,7 @@ TagManager:
   tags:
   - KeyDoor
   - Canvas
+  - TaskTexts
   layers:
   - Default
   - TransparentFX

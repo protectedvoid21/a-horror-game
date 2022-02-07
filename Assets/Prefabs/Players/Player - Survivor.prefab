@@ -93,11 +93,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4249330639372796864}
   - component: {fileID: 4249330639372796867}
+  - component: {fileID: 3007040129767043844}
   - component: {fileID: 4249330639372796866}
   - component: {fileID: 2038728596}
   - component: {fileID: -5314147130345014686}
   - component: {fileID: -4055356637779822915}
-  - component: {fileID: 3007040129767043844}
   m_Layer: 3
   m_Name: Player - Survivor
   m_TagString: Player
@@ -140,6 +140,20 @@ MonoBehaviour:
   sprintModifier: 1.5
   gravityForce: 12
   jumpForce: 18
+--- !u!114 &3007040129767043844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4249330639372796893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d82dd4f3d40422a9b1e3f5ed006a384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taskManager: {fileID: 6099179000364070716, guid: 2c0bc470981878d4d8c417557a32d9b0,
+    type: 3}
 --- !u!143 &4249330639372796866
 CharacterController:
   m_ObjectHideFlags: 0
@@ -219,18 +233,6 @@ MonoBehaviour:
   InLocalSpace: 0
   Interpolate: 1
   CanCommitToTransform: 0
---- !u!114 &3007040129767043844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4249330639372796893}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d82dd4f3d40422a9b1e3f5ed006a384, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &3997147364707019661
 PrefabInstance:
   m_ObjectHideFlags: 0

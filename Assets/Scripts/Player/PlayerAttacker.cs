@@ -6,12 +6,19 @@ public class PlayerAttacker : NetworkBehaviour {
     
     private PlayerSurvivor[] playerSurvivors;
 
-    public override void OnNetworkSpawn() {
+    private void Start() {
+        if(!IsLocalPlayer) {
+            return;
+        }
         playerSurvivors = FindObjectsOfType<PlayerSurvivor>();
         Debug.Log($"Found survivors : {playerSurvivors.Length}");
     }
 
     private void Update() {
+        if(!IsLocalPlayer) {
+            return;
+        }
+        
         foreach(var player in playerSurvivors) {
             Vector3 playerPosition = player.transform.position;
 

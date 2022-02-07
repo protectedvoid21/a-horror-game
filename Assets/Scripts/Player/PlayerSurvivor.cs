@@ -4,23 +4,34 @@ using Unity.Netcode;
 
 public class PlayerSurvivor : NetworkBehaviour {
     private PlayerTaskManager taskManager;
-
     private Action OnAllTasksCompleted;
 
-    public override void OnNetworkSpawn() {
-        if(!IsLocalPlayer) {
-            return;
-        }
-        taskManager = FindObjectOfType<PlayerTaskManager>();
-        taskManager.PassActionReference(OnAllTasksCompleted);
-    }
-    
+    //it's terrible
+    private bool taskFound;
+
     private void Update() {
         if(!IsLocalPlayer) {
             return;
         }
-        if(taskManager.AllTaskCompleted()) {
-            print("Done");
+        if(!taskFound) {
+            FindTaskManager();
+            return;
         }
+
+        if(taskManager.AllTaskCompleted()) {
+            print("OnAllTasksCompleted invoked");
+        }
+    }
+
+    //awful
+    private void FindTaskManager() {
+        taskManager = FindObjectOfType<PlayerTaskManager>();
+        //end this pain fast
+        if(taskManager == null) {
+            return;
+        }
+        taskManager.Initialize();
+        taskManager.PassActionReference(OnAllTasksCompleted);
+        taskFound = true;
     }
 }

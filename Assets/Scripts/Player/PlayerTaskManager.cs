@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
@@ -6,9 +7,9 @@ using Unity.Netcode;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class PlayerTaskManager : NetworkBehaviour {
+public class PlayerTaskManager : MonoBehaviour {
     [SerializeField] private TaskObjectList taskObjectList;
-    [SerializeField] private TextMeshProUGUI[] taskTexts;
+    private TextMeshProUGUI[] taskTexts;
 
     [SerializeField] private int requiredTasksToStart = 3;
 
@@ -18,7 +19,21 @@ public class PlayerTaskManager : NetworkBehaviour {
     private List<TaskObject> tasks = new List<TaskObject>();
     private List<GameTask> gameTasks = new List<GameTask>();
 
-    public override void OnNetworkSpawn() {
+    private bool started;
+    
+    private IEnumerator Create() {
+        GameObject textObject = GameObject.FindGameObjectWithTag("TaskTexts");
+
+        while(textObject == null) {
+            textObject = GameObject.FindGameObjectWithTag("TaskTexts");
+            yield return null;
+        }
+
+        taskTexts = textObject.GetComponentsInChildren<TextMeshProUGUI>();
+    }
+
+    public void Initialize() {
+        StartCoroutine(Create());
         foreach(var taskText in taskTexts) {
             taskText.text = "";
         }
@@ -43,6 +58,8 @@ public class PlayerTaskManager : NetworkBehaviour {
             gameTask.ActivateTask();
             gameTasks.Add(gameTask);
         }
+
+        started = true;
     }
 
     public void PassActionReference(Action onTasksCompletedSurvivor) {
@@ -56,6 +73,10 @@ public class PlayerTaskManager : NetworkBehaviour {
     }
 
     public bool AllTaskCompleted() {
+        if(!started) {
+            return false;
+        }
+
         return gameTasks.TrueForAll(task => task.IsCompleted());
     }
 }
